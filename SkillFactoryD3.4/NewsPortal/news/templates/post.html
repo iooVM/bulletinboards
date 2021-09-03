@@ -9,7 +9,8 @@ Posts
 <!-- В контенте на странице мы выводим сам товар, ID которого было передано в адрес -->
 {% block content %}
 <h1>{{ post.title }}</h1>
-<h3>{{ post.dateCreation|date:'M d Y'  }}</h3>
+<h3>{{ post.dateCreation|date:'M d Y H:m'  }}</h3>
+<h3>{{ post.dateCreation }}</h3>
 <h2>{{ post.content}}</h2>
 {% endblock content %}
 

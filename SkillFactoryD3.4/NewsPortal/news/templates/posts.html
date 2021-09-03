@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filters %}
 
 {% block title %}
 Products
@@ -29,12 +30,14 @@ Products
         {% for post in posts %}
             <tr>
                 <td>
-                    {{ post.title }}
+                    {{ post.title|censor }}
                 </td>
                 <td>
 				</td>
                 <td>
-                    {{ time_now |date:'d-M-Y H:m'   }}
+<!--                    {{ post.dateCreation|date:'d M Y H:m' }} -->
+                    {{ post.dateCreation|date:"d-m-Y H:i"}}
+<!--                   {{ time_now |date:'d-M-Y H:m'   }} -->
                 </td>
                 <td>
 				</td>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from datetime import datetime
+from django.core.paginator import Paginator
 
 # Create your views here.
 from django.views.generic import ListView, DetailView  # импортируем класс, который говорит нам о том, что в этом представлении мы будем выводить список объектов из БД
@@ -22,12 +23,13 @@ class PostList(ListView):
     # model.order_by('-dateCreation')
     template_name = 'posts.html'  # указываем имя шаблона, в котором будет лежать HTML, в котором будут все инструкции о том, как именно пользователю должны вывестись наши объекты
     context_object_name = 'posts'  # это имя списка, в котором будут лежать все объекты, его надо указать, чтобы обратиться к самому списку объектов через HTML-шаблон
-    queryset = Post.objects.order_by('-dateCreation') # Сортировка по дате создания
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['time_now'] = datetime.utcnow()  # добавим переменную текущей даты time_now
-        context['value1'] = None  # добавим ещё одну пустую переменную, чтобы на её примере посмотреть работу другого фильтра
-        return context
+#    queryset = Post.objects.order_by('-dateCreation') # Сортировка по дате создания, rjcnfkmysq cgjcj,
+    ordering = ['dateCreation']
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['time_now'] = datetime.utcnow()  # добавим переменную текущей даты time_now
+#         context['value1'] = None  # добавим ещё одну пустую переменную, чтобы на её примере посмотреть работу другого фильтра
+#         return context
 
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
