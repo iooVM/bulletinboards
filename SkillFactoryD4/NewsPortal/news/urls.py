@@ -1,6 +1,6 @@
 from django.urls import path, include
 from django.conf.urls import url
-from .views import AuthorList, AuthorDetail, PostList, PostDetail,PostFind  # импортируем наше представление
+from .views import AuthorList, AuthorDetail, PostList, PostDetail,PostFind,PostDetailView,PostCreateView,PostUpdateView,PostDeleteView   # импортируем наше представление
 from .views import (
     DefaultFormByFieldView,
     DefaultFormsetView,
@@ -43,5 +43,9 @@ urlpatterns = [
     url(r"^form_with_files$", FormWithFilesView.as_view(), name="form_with_files"),
     url(r"^pagination$", PaginationView.as_view(), name="pagination"),
     url(r"^misc$", MiscView.as_view(), name="misc"),
+    path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),  # Ссылка на детали товара
+    path('create/', PostCreateView.as_view(), name='post_create'),  # Ссылка на создание товара
+    path('create/<int:pk>', PostUpdateView.as_view(), name='Post_update'),
+    path('delete/<int:pk>', PostDeleteView.as_view(), name='Post_delete'),
 
 ]

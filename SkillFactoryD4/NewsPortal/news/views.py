@@ -4,9 +4,10 @@ from django.core.paginator import Paginator
 from django.views import View
 from .models import Post
 from .filters import PostFilter
+from .forms import PostForm
 
 # Create your views here.
-from django.views.generic import ListView, DetailView  # импортируем класс, который говорит нам о том, что в этом представлении мы будем выводить список объектов из БД
+from django.views.generic import ListView, CreateView, DetailView,UpdateView,DeleteView # импортируем необходимые дженерики
 from .models import Author, Category, Post, PostCategory, Comment
 from django.contrib import messages
 from django.core.files.storage import default_storage
@@ -36,23 +37,30 @@ class PostList(ListView):
 #    queryset = Post.objects.order_by('-dateCreation') # Сортировка по дате создания, rjcnfkmysq cgjcj,
     ordering = ['dateCreation']
     paginate_by = 10
+    form_class = PostForm
     def get_context_data(self, **kwargs):# забираем отфильтрованные объекты переопределяя метод get_context_data у наследуемого класса (привет, полиморфизм, мы скучали!!!)
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())  # вписываем наш фильтр в контекст
         context['categories'] = Category.objects.all()
+        context['authors'] = Author.objects.all()
         return context
 
     def post(self, request, *args, **kwargs):
         # берём значения для нового товара из POST-запроса отправленного на сервер
-        title = request.POST['title']
-        author = request.POST['author']
-        category_id = request.POST['category']
-        content = request.POST['content']
-
-        post = posts(title=title, author=author, category_id=category_id,
-                          content=content)  # создаём Новый пост и сохраняем его
-        post.save()
-        return super().get(request, *args, **kwargs)
+        # title = request.POST['title']
+        # author_id = request.POST['author']
+        # author = Author.objects.get(author_id)
+        # categoryType = request.POST['category']
+        # content = request.POST['content']
+        #
+        # post = Post(author=author, categoryType=categoryType, title=title,
+        #                   content=content)  # создаём Новый пост и сохраняем его
+        # post.save()
+        # return super().get(request, *args, **kwargs)
+        form = self.form_class(request.POST)  # создаём новую форму, забиваем в неё данные из POST-запроса
+        if form.is_valid(): # если пользователь ввёл всё правильно и нигде не ошибся, то сохраняем новый товар
+            form.save()
+            return super().get(request, *args, **kwargs)
 
 
 # создаём представление, в котором будут детали конкретного отдельного товара
@@ -173,3 +181,33 @@ class PaginationView(TemplateView):
 
 class MiscView(TemplateView):
     template_name = "app/misc.html"
+
+
+# дженерик для получения деталей о Посте
+class PostDetailView(DetailView):
+    template_name = 'post_detail.html'
+    queryset = Post.objects.all()
+
+# дженерик для создания объекта. Надо указать только имя шаблона и класс формы, который мы написали в прошлом юните. Остальное он сделает за вас
+class PostCreateView(CreateView):
+    template_name = 'post_create.html'
+    form_class = PostForm
+
+
+# дженерик для редактирования объекта
+class PostUpdateView(UpdateView):
+    template_name = 'post_create.html'
+    form_class = PostForm
+
+    # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
+    def get_object(self, **kwargs):
+        id = self.kwargs.get('pk')
+        return Post.objects.get(pk=id)
+
+
+# дженерик для удаления товара
+class PostDeleteView(DeleteView):
+    template_name = 'sample_app/post_delete.html'
+    queryset = Post.objects.all()
+    success_url = '/news/'
+

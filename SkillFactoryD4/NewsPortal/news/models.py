@@ -99,7 +99,8 @@ class Post(models.Model):
     def preview(self):
         return self.content[:123] + '...'
 
-    pass
+    def get_absolute_url(self):  # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с товаром
+        return f'/news/{self.id}'
 
 
 # Промежуточная модель для связи «многие ко многим»
