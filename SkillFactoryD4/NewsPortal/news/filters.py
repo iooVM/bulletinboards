@@ -15,6 +15,8 @@ class PostFilter(FilterSet):
 #         }
         fields = {
              'title':['icontains'],
+
+
              'author__authorUser__username': ['icontains'],
              'dateCreation': ['gt'],
 

@@ -1,5 +1,8 @@
-{% extends 'flatpages/default.html' %}
+{% extends 'app/base.html' %}
+{% load bootstrap5 %}
+
 {% load custom_filters %}
+
 
 {% block title %}
 Products
@@ -74,4 +77,30 @@ Products
     {% else %}
         <h2>Товаров нет!</h2>
     {% endif %}
+<form method="POST">
+    {% csrf_token %}
+    <td>
+    <label for="title">title</label>
+    <input name="title" type="text">
+    </td>
+    <td>
+    <label for="author">author</label>
+    <input name="author" type="text">
+    </td>
+    <td>
+    <!-- Здесь будет список категорий.  -->
+    <select name="category" size="4">
+    <label for="content">content</label>
+    <input name="content" type="text">
+
+      {% for category in categories %}
+        <option value="{{ category.id }}">
+            {{ category.categorya }}
+        </option>
+      {% endfor %}
+
+    </select>
+    </td>
+    <input type="submit" value="Добавить Пост">
+</form>
 {% endblock content %}

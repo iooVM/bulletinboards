@@ -8,7 +8,14 @@ from .filters import PostFilter
 # Create your views here.
 from django.views.generic import ListView, DetailView  # импортируем класс, который говорит нам о том, что в этом представлении мы будем выводить список объектов из БД
 from .models import Author, Category, Post, PostCategory, Comment
+from django.contrib import messages
+from django.core.files.storage import default_storage
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models.fields.files import FieldFile
+from django.views.generic import FormView
+from django.views.generic.base import TemplateView
 
+from .forms import ContactForm, ContactFormSet, FilesForm
 
 class AuthorList(ListView):
     model = Author  # указываем модель, объекты которой мы будем выводить
@@ -29,10 +36,24 @@ class PostList(ListView):
 #    queryset = Post.objects.order_by('-dateCreation') # Сортировка по дате создания, rjcnfkmysq cgjcj,
     ordering = ['dateCreation']
     paginate_by = 10
-    # def get_context_data(self, **kwargs):# забираем отфильтрованные объекты переопределяя метод get_context_data у наследуемого класса (привет, полиморфизм, мы скучали!!!)
-    #     context = super().get_context_data(**kwargs)
-    #     context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())  # вписываем наш фильтр в контекст
-    #     return context
+    def get_context_data(self, **kwargs):# забираем отфильтрованные объекты переопределяя метод get_context_data у наследуемого класса (привет, полиморфизм, мы скучали!!!)
+        context = super().get_context_data(**kwargs)
+        context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset())  # вписываем наш фильтр в контекст
+        context['categories'] = Category.objects.all()
+        return context
+
+    def post(self, request, *args, **kwargs):
+        # берём значения для нового товара из POST-запроса отправленного на сервер
+        title = request.POST['title']
+        author = request.POST['author']
+        category_id = request.POST['category']
+        content = request.POST['content']
+
+        post = posts(title=title, author=author, category_id=category_id,
+                          content=content)  # создаём Новый пост и сохраняем его
+        post.save()
+        return super().get(request, *args, **kwargs)
+
 
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
@@ -74,3 +95,81 @@ class PostSimple(View):
         }
         return render(request, 'product_list.html', data)
 
+class FakeField(object):
+    storage = default_storage
+
+
+fieldfile = FieldFile(None, FakeField, "dummy.txt")
+
+
+class HomePageView(TemplateView):
+    template_name = "app/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        messages.info(self.request, "hello http://example.com")
+        return context
+
+
+class DefaultFormsetView(FormView):
+    template_name = "app/formset.html"
+    form_class = ContactFormSet
+
+
+class DefaultFormView(FormView):
+    template_name = "app/form.html"
+    form_class = ContactForm
+
+
+class DefaultFormByFieldView(FormView):
+    template_name = "app/form_by_field.html"
+    form_class = ContactForm
+
+
+class FormHorizontalView(FormView):
+    template_name = "app/form_horizontal.html"
+    form_class = ContactForm
+
+
+class FormInlineView(FormView):
+    template_name = "app/form_inline.html"
+    form_class = ContactForm
+
+
+class FormWithFilesView(FormView):
+    template_name = "app/form_with_files.html"
+    form_class = FilesForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["layout"] = self.request.GET.get("layout", "vertical")
+        return context
+
+    def get_initial(self):
+        return {"file4": fieldfile}
+
+
+class PaginationView(TemplateView):
+    template_name = "app/pagination.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        lines = []
+        for i in range(200):
+            lines.append("Line %s" % (i + 1))
+        paginator = Paginator(lines, 10)
+        page = self.request.GET.get("page")
+        try:
+            show_lines = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            show_lines = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            show_lines = paginator.page(paginator.num_pages)
+        context["lines"] = show_lines
+        return context
+
+
+class MiscView(TemplateView):
+    template_name = "app/misc.html"
