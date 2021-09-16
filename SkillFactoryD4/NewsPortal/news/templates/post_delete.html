@@ -1,36 +1,36 @@
-{% extends 'sample_app/base.html' %}
+{% extends 'app/base.html' %}
 
-{% block title %} Product list {% endblock title %}
+{% block title %} Post list {% endblock title %}
 
 {% block content %}
 <h2>Вы действительно хотите удалить данный товар?</h2>
-<table>
+<<table>
     <thead>
         <th>
-            Name
+            title
         </th>
         <th>
-            Category
+            author
         </th>
         <th>
-            Price
+            categoryType
         </th>
         <th>
-            Quantity
+            content
         </th>
     </thead>
     <tr>
         <td>
-            {{ product.name|title }}
+            {{ post.title|title }}
         </td>
         <td>
-            {{ product.category.name|title }}
+            {{ post.author.username|title }}
         </td>
         <td>
-            {{ product.price }}
+            {{ post.categoryType }}
         </td>
         <td>
-            {{ product.quantity }}
+            {{ post.content }}
         </td>
     </tr>
 </table>

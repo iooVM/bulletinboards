@@ -33,8 +33,8 @@ urlpatterns = [
     # # т. к. сам по себе это класс, то нам надо представить этот класс в виде view. Для этого вызываем метод as_view
     # path('<int:pk>', PostDetail.as_view()),
     # # pk — это первичный ключ товара, который будет выводиться у нас в шаблон
-    path('news/search', PostFind.as_view()),
-    url(r"^$", HomePageView.as_view(), name="home"),
+    path('search/', PostFind.as_view()),
+    url(r"^$", PostList.as_view(), name="home"),
     url(r"^formset$", DefaultFormsetView.as_view(), name="formset_default"),
     url(r"^form$", DefaultFormView.as_view(), name="form_default"),
     url(r"^form_by_field$", DefaultFormByFieldView.as_view(), name="form_by_field"),
@@ -45,7 +45,7 @@ urlpatterns = [
     url(r"^misc$", MiscView.as_view(), name="misc"),
     path('<int:pk>/', PostDetailView.as_view(), name='post_detail'),  # Ссылка на детали товара
     path('create/', PostCreateView.as_view(), name='post_create'),  # Ссылка на создание товара
-    path('create/<int:pk>', PostUpdateView.as_view(), name='Post_update'),
-    path('delete/<int:pk>', PostDeleteView.as_view(), name='Post_delete'),
+    path('update/<int:pk>', PostUpdateView.as_view(), name='post_update'),
+    path('delete/<int:pk>', PostDeleteView.as_view(), name='post_delete'),
 
 ]

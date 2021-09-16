@@ -207,7 +207,7 @@ class PostUpdateView(UpdateView):
 
 # дженерик для удаления товара
 class PostDeleteView(DeleteView):
-    template_name = 'sample_app/post_delete.html'
+    template_name = 'post_delete.html'
     queryset = Post.objects.all()
     success_url = '/news/'
 
