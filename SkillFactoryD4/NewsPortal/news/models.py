@@ -30,6 +30,9 @@ class Author(models.Model):
         pass
 
     pass
+    def __str__(self):
+        return f'{self.authorUser}'
+
 
 
 '''
