@@ -1,0 +1,41 @@
+{% extends 'app/base.html' %}
+
+{% block title %} Post list {% endblock title %}
+
+{% block content %}
+<h2>Вы действительно хотите удалить данный товар?</h2>
+<<table>
+    <thead>
+        <th>
+            title
+        </th>
+        <th>
+            author
+        </th>
+        <th>
+            categoryType
+        </th>
+        <th>
+            content
+        </th>
+    </thead>
+    <tr>
+        <td>
+            {{ post.title|title }}
+        </td>
+        <td>
+            {{ post.author.username|title }}
+        </td>
+        <td>
+            {{ post.categoryType }}
+        </td>
+        <td>
+            {{ post.content }}
+        </td>
+    </tr>
+</table>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %}
