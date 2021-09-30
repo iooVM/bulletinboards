@@ -23,9 +23,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
     # path('authors/', include('news.urls')),
-    # path('posts/', include('news.urls')),
-    path('', include('news.urls')),
-    # path('', include('protect.urls')),
+    path('posts/', include('news.urls')),
+    path('authors/<int:pk>', include('news.urls')),
+    path('news/<int:pk>', include('news.urls')),
+    path('search/', include('news.urls')),
+    path('authors/', include('news.urls')),
+    path('<int:pk>/', include('news.urls')),  # Ссылка на детали товара
+    path('create/', include('news.urls')),  # Ссылка на создание товара
+    path('update/<int:pk>', include('news.urls')),
+    path('delete/<int:pk>', include('news.urls')),
+    path('', include('protect.urls')),
+    #    path('', include('news.urls')),
+
     path('sign/', include('sign.urls')),
     path('accounts/', include('allauth.urls')),
 

@@ -194,18 +194,20 @@ class PostDetailView(DetailView):
 class PostCreateView(PermissionRequiredMixin,CreateView):
     template_name = 'post_create.html'
     form_class = PostForm
-#    permission_required = ('news.add_post',)
+    permission_required = ('news.add_post',)
 
 
 # дженерик для редактирования объекта
 class PostUpdateView(UpdateView):
     template_name = 'post_create.html'
     form_class = PostForm
+    permission_required = ('news.change_post',)
 
     # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте, который мы собираемся редактировать
     def get_object(self, **kwargs):
         id = self.kwargs.get('pk')
         return Post.objects.get(pk=id)
+
 
 
 # дженерик для удаления товара
