@@ -60,13 +60,11 @@ Posts
 
                     {% for category in post.postCategory.all %}
                                 {{ category }}<br>
+                    <a class="btn btn-primary float-center" href="{% url 'subscribe' category.pk %}">Подписаться</a><br>
+
                     {% endfor %}
-                    <td>
-                        <form action="{% url 'subscribe'  %}" method="POST">
-                            {% csrf_token%}
-                            <button type="submit">Подписаться</button>
-                        </form>
-                    </td>
+
+            </td>
                 </td>
             </tr>
         {% endfor %}
@@ -96,7 +94,7 @@ Posts
 
 
     {% else %}
-        <h2>Товаров нет!</h2>
+        <h2>Постов нет!</h2>
     {% endif %}
 <!-- <form method="POST">
     {% csrf_token %}

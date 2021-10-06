@@ -51,6 +51,7 @@ urlpatterns = [
     # path('category/<int:pk>', subscribe_category, name='subscribe_category'),
     # path('category/<int:pk>', unsubscribe_category, name='unsubscribe_category'),
     path('subscribe/<int:pk>', subscribe, name='subscribe'),
+
     path('unsubscribe/<int:pk>', unsubscribe, name='unsubscribe'),
     path('mail_test/', mail_test, name='mail_test'),
 

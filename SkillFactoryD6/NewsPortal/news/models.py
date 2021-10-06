@@ -64,7 +64,7 @@ class Category(models.Model):
 
     # subscribers = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
-    subscribers = models.ManyToManyField(User, related_name='subscriber')
+    subscribers = models.ManyToManyField(User)
 
     def __str__(self):
         return f'{self.categorya}'

@@ -22,6 +22,10 @@ from .forms import ContactForm, ContactFormSet, FilesForm
 from django.core.mail import send_mail
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+
+
 
 class AuthorList(ListView):
     model = Author  # указываем модель, объекты которой мы будем выводить
@@ -198,6 +202,26 @@ class PostCreateView(PermissionRequiredMixin,CreateView):
     template_name = 'post_create.html'
     form_class = PostForm
     permission_required = ('news.add_post',)
+    email = Post.postCategory
+    print(email)
+
+    # -------------Subsribers Mailer-------------
+    # def post(self, request, *args, **kwargs):  # переопределяем пост родительской модели BaseCreateView
+    #     html_content = render_to_string(
+    #         'email_message.html',
+    #     )
+    #     self.object = None
+    #     msg = EmailMultiAlternatives(
+    #         subject='Обновление в Вашей категории',
+    #         body='Добрый день',
+    #         from_email='test@shirshakov.ru',
+    #         to=['mihail@shirshakov.ru'],
+    #     )
+    #     msg.attach_alternative(html_content, "text/html")
+    #     msg.send()
+    #     return super().post(request, *args, **kwargs)
+
+# -------------Subsribers Mailer-------------
 
 
 # дженерик для редактирования объекта
@@ -233,7 +257,7 @@ class CategorySubscribe(DetailView):
         return context
 
 @login_required
-def subscribe(request, pk):
+def subscribe(request, pk ):
     # Достаем текущего пользователя
     user = request.user
     # Получаем ссылку из адресной строки и берем pk как id категории
@@ -242,6 +266,7 @@ def subscribe(request, pk):
     # Получаем текущую категорию
     category = Category.objects.get(id=pk)
     # Создаем связь между пользователем и категорией
+    # print(user)
     category.subscribers.add(user)
     # category.subscribers(user)
     # category.subscribers
@@ -257,13 +282,15 @@ def subscribe(request, pk):
         subject=f'{category.categorya}',
         message=f'Вы {request.user} подписались на обновление категории {category}',
         from_email='test@shirshakov.ru',
-        # recipient_list=[email, ],
-        recipient_list=['mihail@shirshakov.ru'],
+        recipient_list=[email],
+        # recipient_list=['mihail@shirshakov.ru'],
     )
     # return redirect('/news')
     # return redirect(f'{success_url}/')
     # return redirect(request.META.get('HTTP_REFERER'))
-    return redirect('/posts')
+    # return redirect('/posts')
+    return redirect('/')
+
 @login_required
 def unsubscribe(request):
     # Достаем текущего пользователя
