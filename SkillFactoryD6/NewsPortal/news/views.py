@@ -24,8 +24,22 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from django.core.mail import mail_managers
 
 
+#Сигналы
+#
+# def notify_managers_post(sender, instance, created, **kwargs):
+#     subject = f'{instance.client_name} {instance.date.strftime("%d %m %Y")}'
+#
+#     mail_managers(
+#         subject=subject,
+#         message=instance.message,
+#     )
+#
+# post_save.connect(notify_managers_post, sender=Post)
 
 class AuthorList(ListView):
     model = Author  # указываем модель, объекты которой мы будем выводить
@@ -202,8 +216,8 @@ class PostCreateView(PermissionRequiredMixin,CreateView):
     template_name = 'post_create.html'
     form_class = PostForm
     permission_required = ('news.add_post',)
-    email = Post.postCategory
-    print(email)
+    # email = Post.postCategory
+    # print(email)
 
     # -------------Subsribers Mailer-------------
     # def post(self, request, *args, **kwargs):  # переопределяем пост родительской модели BaseCreateView

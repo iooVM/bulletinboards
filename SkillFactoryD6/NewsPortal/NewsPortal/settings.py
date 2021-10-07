@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'django_filters',
     'bootstrap5',
-    'news',
+    # 'news',
+    'news.apps.NewsConfig',
     'sign',
     'protect',
     'allauth',
@@ -117,7 +118,8 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 # Database
