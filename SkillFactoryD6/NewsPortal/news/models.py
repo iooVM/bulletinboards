@@ -2,6 +2,7 @@ from django.db import models
 # импортируем для связи «один к одному» с встроенной моделью пользователей User
 from django.contrib.auth.models import User
 from django.db.models import Sum
+from datetime import datetime, timedelta, date
 
 
 # Create your models here.
@@ -107,7 +108,7 @@ class Post(models.Model):
         return self.content[:123] + '...'
 
     def get_absolute_url(self):  # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с товаром
-        return f'/news/{self.id}'
+        return f'http://127.0.0.1:8000/news/{self.id}'
 
     def __str__(self):
         return f'{self.title}'

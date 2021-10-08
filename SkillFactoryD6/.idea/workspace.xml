@@ -24,7 +24,10 @@
       <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/templatetags/custom_filters.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/product.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/product_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NewsPortal/news/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news/management/commands/runapscheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news/templates/account/email/email_confirmation_signup_message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/cat_email_message.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/scheduler_email.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../less1/.idea/less1.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../less2/.idea/less2.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../py3.8/.idea/py3.8.iml" afterDir="false" />
@@ -58,7 +61,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewsPortal/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NewsPortal/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +74,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -134,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1633514960600</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="123123">
+      <created>1633591553176</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1633591553176</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

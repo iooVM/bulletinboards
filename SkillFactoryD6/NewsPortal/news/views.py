@@ -216,8 +216,25 @@ class PostCreateView(PermissionRequiredMixin,CreateView):
     template_name = 'post_create.html'
     form_class = PostForm
     permission_required = ('news.add_post',)
-    # email = Post.postCategory
-    # print(email)
+    success_url = '/posts'
+
+    # Функция для кастомной валидации полей формы модели
+    def form_valid(self, form):
+        # создаем форму, но не отправляем его в БД, пока просто держим в памяти
+        fields = form.save(commit=False)
+        # Через реквест передаем недостающую форму, которая обязательно
+        # fields.postAuthor = Author.objects.get(authorUser=self.request.user)
+        # Наконец сохраняем в БД
+        fields.save()
+        return super().form_valid(form)
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_time'] = datetime.now()
+        return context
+        # email = Post.postCategory
+        # print(email)
 
     # -------------Subsribers Mailer-------------
     # def post(self, request, *args, **kwargs):  # переопределяем пост родительской модели BaseCreateView
@@ -236,6 +253,7 @@ class PostCreateView(PermissionRequiredMixin,CreateView):
     #     return super().post(request, *args, **kwargs)
 
 # -------------Subsribers Mailer-------------
+
 
 
 # дженерик для редактирования объекта
