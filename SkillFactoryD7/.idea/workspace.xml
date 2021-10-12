@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89408670-0acb-4999-a732-03b2994c306e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Mikrotik_API.py/.idea/Mikrotik_API.py.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Mikrotik_API_Class/.idea/Mikrotik_API_Class.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Mikrotik_reset_conf/.idea/Mikrotik_reset_conf.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Mikrotik_test.py/.idea/Mikrotik_test.py.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Modul_C1.9/.idea/Modul_C1.9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Modul_C23/.idea/Modul_C23.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Modul_C2_final_task/.idea/Modul_C2_final_task.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD1/.idea/SkillFactoryD1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/.idea/SkillFactoryD2.4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/NewsPaper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/NewsPaper/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/NewsPaper/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/templatetags/custom_filters.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/product_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/news/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NewsPortal/templates/celery.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../less1/.idea/less1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../less2/.idea/less2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../py3.8/.idea/py3.8.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../py3.9/.idea/py3.9.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../pythonProject/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../script_1/.idea/script_1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../script_2/.idea/script_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../socket.py/.idea/socket.py.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test3/.idea/test3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test4/.idea/test4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test5/.idea/test5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../trening/.idea/trening.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD2.7/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD2.7/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD2.7/venv/Lib/site-packages/django/conf/project_template/project_name/settings.py-tpl" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/NewsPaper/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD2.7/venv/Lib/site-packages/django/conf/project_template/project_name/urls.py-tpl" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD2.4/NewsPaper/NewsPaper/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/projec/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/projec/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/simpleapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD3.2/projec/templates/products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD6/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD6/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/news/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SkillFactoryD6/NewsPortal/news/signals.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/NewsPortal/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NewsPortal/news/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/NewsPortal/news/apps.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1zPAf3L9rBdT75j8TkyIZtTDE8J" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\m.shirshakov\PycharmProjects\SkillFactoryD7\NewsPortal\news" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="SkillFactoryD7" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89408670-0acb-4999-a732-03b2994c306e" name="Changes" comment="" />
+      <created>1634039450192</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634039450192</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
