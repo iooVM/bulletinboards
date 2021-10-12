@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+
+    <p>Здравствуй, {{ USER }}. Новая статья в твоём любимом разделе!</p>
+
+       {% for post in posts %}
+    <a href="{{post.get_absolute_url}}">{{ post.title }} </a>
+    <p>{{ post.content|truncatechars:50 }}</p>
+        {% endfor %}
+
+</body>
+</html>
