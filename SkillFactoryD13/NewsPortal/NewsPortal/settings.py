@@ -205,13 +205,16 @@ LOGGING = {
     'disable_existing_loggers': False,
     'loggers': {
         'django': {
-            'handlers': ['hand_debug_cons', 'hand_warning_cons', 'hand_error_cons', 'hand_info_file'],
+            'handlers': ['hand_debug_cons', 'hand_info_file', 'hand_warning_cons', 'hand_error_cons'],
             'level': 'DEBUG',
+        },
+        'table': {
+            'level': 'DEBUG',
+            'handlers': ['hand_debug_cons', 'hand_info_file', 'hand_warning_cons', 'hand_error_cons'],
         },
         'django.request': {
             'handlers': ['hand_error_file', 'mail_admins'],
             'propagate': True,
-
         },
         'django.server': {
             'handlers': ['hand_error_file', 'mail_admins'],
@@ -234,28 +237,36 @@ LOGGING = {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
         },
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        },
     },
     'handlers': {
         'hand_debug_cons': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
             'formatter': 'format_debug',
+            'filters': ['require_debug_true'],
         },
         'hand_info_file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
             'formatter': 'format_info',
             'filename': 'logs/general.log',
+            'filters': ['require_debug_false'],
+
         },
         'hand_warning_cons': {
             'level': 'WARNING',
             'class': 'logging.StreamHandler',
             'formatter': 'format_warning',
+            'filters': ['require_debug_true'],
         },
         'hand_error_cons': {
             'level': 'ERROR',
             'class': 'logging.StreamHandler',
             'formatter': 'format_error',
+            'filters': ['require_debug_true'],
         },
         'hand_error_file': {
             'level': 'ERROR',
@@ -272,6 +283,7 @@ LOGGING = {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',
             'formatter': 'format_error',
+            'filters': ['require_debug_false'],
         }
 
     },
